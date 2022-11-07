@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <None Remove="Resources\Fonts\DangerNight.otf" />
+    <None Remove="Resources\Fonts\MVPGiaIcons.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\DangerNight.otf" />
+    <EmbeddedResource Include="Resources\Fonts\MVPGiaIcons.ttf" />
   </ItemGroup>
 
   <ItemGroup>

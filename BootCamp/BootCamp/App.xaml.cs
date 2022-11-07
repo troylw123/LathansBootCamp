@@ -6,7 +6,7 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 
-[assembly: ExportFont("DangerNight.otf", Alias = "DangerNight")]
+
 namespace BootCamp
 {
     public partial class App
