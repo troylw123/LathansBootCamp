@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BootCamp.Views.HelloWorld"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:BootCamp.ViewModels"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:HelloWorldViewModel">
+
+    <StackLayout
+        Padding="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand">
+        <Label
+            Margin="10"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Text="{Binding UserInput}" />
+        <FlexLayout WidthRequest="500">
+            <Label
+                FlexLayout.AlignSelf="Center"
+                FontSize="Medium"
+                Text="#:" />
+            <Entry
+                MaxLength="6"
+                Placeholder="Enter 6 digit hex color"
+                Text="{Binding ColorInput}" />
+        </FlexLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    <TextCell Text="{Binding Message}" />
+                    <TextCell Text="{Binding Name}" TextColor="Green" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <FlexLayout>
+            <Label
+                Margin="10,0,10,0"
+                FlexLayout.AlignSelf="Center"
+                Text="Can Go Back?" />
+            <CheckBox FlexLayout.AlignSelf="Auto" IsChecked="{Binding IsEnabled}" />
+        </FlexLayout>
+
+        <Button Command="{Binding GoBackCommand}" Text="Back to Main Page" />
+    </StackLayout>
+
+</ContentPage>

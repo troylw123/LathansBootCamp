@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BootCamp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:BootCamp.Converters"
+    xmlns:viewmodels="clr-namespace:BootCamp.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="viewmodels:MainPageViewModel">
+
+    <ContentPage.Resources>
+        <converters:ColorConverter x:Key="colorConverter" />
+    </ContentPage.Resources>
+
+    <StackLayout
+        Padding="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand">
+        <Label
+            FontFamily="DangerNight"
+            FontSize="50"
+            Text="Happy Halloween!" />
+        <Entry Placeholder="Enter message here" Text="{Binding UserInput}" />
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    <TextCell Text="{Binding Message}" />
+                    <TextCell Text="{Binding Name}" TextColor="Red" />
+                    <TextCell Text="{Binding ColorInput}" TextColor="{Binding ColorInput, Converter={StaticResource colorConverter}}" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button Command="{Binding GoCommand}" Text="HelloWorld Page" />
+    </StackLayout>
+
+</ContentPage>
