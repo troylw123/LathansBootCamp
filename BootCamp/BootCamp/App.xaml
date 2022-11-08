@@ -6,7 +6,7 @@
     xmlns:prism="http://prismlibrary.com">
     <Application.Resources>
 
-        <!--  Application resource dictionary  -->
+        <ResourceDictionary Source="Styles/Styles.xaml"/>
 
     </Application.Resources>
 </prism:PrismApplication>
