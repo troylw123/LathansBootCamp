@@ -69,7 +69,7 @@ namespace BootCamp.ViewModels
 
             NavigationService.GoBackAsync(new NavigationParameters() {
                     { "key_message","snoopy is VERY cool" },
-                    { "key_name", "ghostbusters" },
+                    { "key_name", "GHOSTBUSTERS" },
                     { "key_color", _colorInput },
                 });
         }

@@ -21,6 +21,7 @@
                 FontSize="Medium"
                 Text="#:" />
             <Entry
+                Style="{StaticResource entryStyle}"
                 MaxLength="6"
                 Placeholder="Enter 6 digit hex color"
                 Text="{Binding ColorInput}" />
@@ -42,7 +43,7 @@
             <CheckBox FlexLayout.AlignSelf="Auto" IsChecked="{Binding IsEnabled}" />
         </FlexLayout>
 
-        <Button Command="{Binding GoBackCommand}" Text="Back to Main Page" />
+        <Button Command="{Binding GoBackCommand}" Text="Back to Main Page"  Style="{StaticResource buttonStyle}"/>
     </StackLayout>
 
 </ContentPage>

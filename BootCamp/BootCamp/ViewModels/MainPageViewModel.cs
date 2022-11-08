@@ -1,8 +1,10 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using System.ComponentModel;
 
 namespace BootCamp.ViewModels
 {
+    [DesignTimeVisible(false)]
     public class MainPageViewModel : ViewModelBase
     {
 
@@ -11,6 +13,7 @@ namespace BootCamp.ViewModels
         private string _message;
         private string _userInput;
         private string _colorInput;
+
         public string ColorInput
         {
             get { return _colorInput; }
