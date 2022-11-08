@@ -30,6 +30,7 @@ namespace BootCamp
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<HelloWorld, HelloWorldViewModel>();
+            containerRegistry.RegisterForNavigation<AlbumPage, AlbumPageViewModel>();
         }
     }
 }

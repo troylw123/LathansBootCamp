@@ -1,18 +1,17 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
-using System.ComponentModel;
 
 namespace BootCamp.ViewModels
 {
-    [DesignTimeVisible(false)]
     public class MainPageViewModel : ViewModelBase
     {
-
+        private DelegateCommand _goAlbumsCommand;
         private DelegateCommand _goCommand;
         private string _name;
         private string _message;
         private string _userInput;
         private string _colorInput;
+
 
         public string ColorInput
         {
@@ -38,8 +37,22 @@ namespace BootCamp.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
+
         public DelegateCommand GoCommand =>
             _goCommand ?? (_goCommand = new DelegateCommand(ExecuteGoCommand, CanExecuteGoCommand));
+
+        public DelegateCommand GoAlbumsCommand =>
+            _goAlbumsCommand ?? (_goAlbumsCommand = new DelegateCommand(ExecuteGoAlbumsCommand, CanExecuteGoAlbumsCommand));
+
+        private bool CanExecuteGoAlbumsCommand()
+        {
+            return true;
+        }
+
+        private void ExecuteGoAlbumsCommand()
+        {
+            NavigationService.NavigateAsync("AlbumPage");
+        }
 
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
