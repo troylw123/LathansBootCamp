@@ -6,21 +6,44 @@
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True">
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup>
+                        <VisualState Name="Normal" />
+                        <VisualState Name="Focused">
+                            <VisualState.Setters>
+                                <Setter TargetName="testEntry" Property="Entry.BackgroundColor" Value="Lime" />
+                                <Setter TargetName="testEntry" Property="Entry.FontSize" Value="50" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
     <StackLayout>
         <Label
             Margin="15"
+            BackgroundColor="Beige"
             FontSize="25"
             Text="My Favorite Albums of the 90s"
             TextDecorations="Underline" />
-        <ListView
-            x:Name="AlbumView"
-            ItemsSource="{Binding Albums}">
+        <ListView x:Name="albumView" ItemsSource="{Binding Albums}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Detail="{Binding Artist}" Text="{Binding Name}" />
+                    <TextCell
+                        x:Name="albumCell"
+                        Detail="{Binding Artist}"
+                        Text="{Binding Name}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Entry
+            x:Name="testEntry"
+            Text="Testing VSG"
+            VerticalOptions="Start" />
     </StackLayout>
 
 </ContentPage>
