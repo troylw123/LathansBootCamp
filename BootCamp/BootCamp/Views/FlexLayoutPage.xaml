@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BootCamp.Views.FlexLayoutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <FlexLayout
+        AlignItems="Stretch"
+        Direction="Column"
+        JustifyContent="SpaceBetween"
+        Wrap="Wrap">
+        <Label
+            BackgroundColor="LightGray"
+            FlexLayout.Grow="1"
+            FontSize="20"
+            HeightRequest="100"
+            Text="One"
+            TextColor="Blue" />
+        <Label
+            Margin="0,10,0,10"
+            BackgroundColor="LightGray"
+            FontSize="20"
+            Text="Two"
+            TextColor="Green" />
+        <Label
+            BackgroundColor="LightGray"
+            FlexLayout.Order="-1"
+            FontSize="20"
+            HeightRequest="100"
+            Text="Three"
+            TextColor="Red" />
+        <Label
+            BackgroundColor="LightGray"
+            FlexLayout.Basis="25%"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="Four"
+            TextColor="Orange"
+            VerticalTextAlignment="Center" />
+        <Label
+            BackgroundColor="LightGray"
+            FlexLayout.Basis="25%"
+            FontSize="20"
+            Text="Five"
+            TextColor="Purple" />
+        <Label
+            BackgroundColor="LightGray"
+            FontSize="20"
+            Text="Six"
+            TextColor="Yellow" />
+        <!--  FlexLayout.AlignSelf="Start"  -->
+        <Label
+            BackgroundColor="LightGray"
+            FontSize="20"
+            HeightRequest="100"
+            Text="Seven"
+            TextColor="HotPink" />
+        <Label
+            BackgroundColor="LightGray"
+            FontSize="20"
+            Text="Eight"
+            TextColor="DarkTurquoise" />
+        <Label
+            BackgroundColor="LightGray"
+            FontSize="20"
+            HeightRequest="100"
+            Text="Nine"
+            TextColor="Black" />
+        <Label
+            BackgroundColor="LightGray"
+            FontSize="20"
+            Text="Ten"
+            TextColor="Brown" />
+    </FlexLayout>
+
+</ContentPage>

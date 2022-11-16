@@ -8,6 +8,7 @@ namespace BootCamp.ViewModels
         private DelegateCommand _goAlbumsCommand;
         private DelegateCommand _goCommand;
         private DelegateCommand _goGridsCommand;
+        private DelegateCommand _goFlexCommand;
         private string _name;
         private string _message;
         private string _userInput;
@@ -46,6 +47,19 @@ namespace BootCamp.ViewModels
             _goAlbumsCommand ?? (_goAlbumsCommand = new DelegateCommand(ExecuteGoAlbumsCommand, CanExecuteGoAlbumsCommand));
         public DelegateCommand GoGridsCommand =>
             _goGridsCommand ?? (_goGridsCommand = new DelegateCommand(ExecuteGoGridsCommand, CanExecuteGoGridsCommand));
+
+        public DelegateCommand GoFlexCommand =>
+            _goFlexCommand ?? (_goFlexCommand = new DelegateCommand(ExecuteGoFlexCommand, CanExecuteGoFlexCommand));
+
+        private bool CanExecuteGoFlexCommand()
+        {
+            return true;
+        }
+
+        private void ExecuteGoFlexCommand()
+        {
+            NavigationService.NavigateAsync("FlexLayoutPage");
+        }
 
         private void ExecuteGoGridsCommand()
         {
