@@ -78,6 +78,7 @@
         </TableView>
         <Button Command="{Binding GoCommand}" Text="HelloWorld Page" />
         <Button Command="{Binding GoAlbumsCommand}" Text="Album Page" />
+        <Button Command="{Binding GoGridsCommand}" Text="Grids Page" />
     </StackLayout>
 
 </ContentPage>

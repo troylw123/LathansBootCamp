@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BootCamp.Views.GridsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:BootCamp.ViewModels"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:GridsPageViewModel">
+
+    <!--
+        grid within a grid
+        default row and column spacing are 6
+        * is a spring that fills available space
+        can also be a % if all add up to 100
+    -->
+
+    <Grid x:Name="outerGrid" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Grid
+            x:Name="innerGrid"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            ColumnSpacing="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <BoxView
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Gray" />
+            <BoxView
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="5"
+                Color="Yellow" />
+            <BoxView
+                Grid.Row="1"
+                Grid.Column="0"
+                Color="Black" />
+            <BoxView
+                Grid.Row="0"
+                Grid.Column="1"
+                Color="Green" />
+            <BoxView
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="5"
+                Color="Red" />
+        </Grid>
+        <BoxView
+            Grid.Row="0"
+            Grid.Column="0"
+            Color="Aqua" />
+        <BoxView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Color="Blue" />
+        <BoxView
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="3" />
+        <BoxView
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Color="DarkTurquoise" />
+        <BoxView
+            Grid.Row="4"
+            Grid.Column="2"
+            Color="MediumPurple" />
+    </Grid>
+
+</ContentPage>

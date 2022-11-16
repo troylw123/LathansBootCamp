@@ -7,6 +7,7 @@ namespace BootCamp.ViewModels
     {
         private DelegateCommand _goAlbumsCommand;
         private DelegateCommand _goCommand;
+        private DelegateCommand _goGridsCommand;
         private string _name;
         private string _message;
         private string _userInput;
@@ -43,6 +44,18 @@ namespace BootCamp.ViewModels
 
         public DelegateCommand GoAlbumsCommand =>
             _goAlbumsCommand ?? (_goAlbumsCommand = new DelegateCommand(ExecuteGoAlbumsCommand, CanExecuteGoAlbumsCommand));
+        public DelegateCommand GoGridsCommand =>
+            _goGridsCommand ?? (_goGridsCommand = new DelegateCommand(ExecuteGoGridsCommand, CanExecuteGoGridsCommand));
+
+        private void ExecuteGoGridsCommand()
+        {
+            NavigationService.NavigateAsync("GridsPage");
+        }
+
+        private bool CanExecuteGoGridsCommand()
+        {
+            return true;
+        }
 
         private bool CanExecuteGoAlbumsCommand()
         {
