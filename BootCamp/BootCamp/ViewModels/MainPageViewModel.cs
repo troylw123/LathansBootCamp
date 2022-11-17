@@ -9,6 +9,7 @@ namespace BootCamp.ViewModels
         private DelegateCommand _goCommand;
         private DelegateCommand _goGridsCommand;
         private DelegateCommand _goFlexCommand;
+        private DelegateCommand _goVSGCommand;
         private string _name;
         private string _message;
         private string _userInput;
@@ -50,6 +51,19 @@ namespace BootCamp.ViewModels
 
         public DelegateCommand GoFlexCommand =>
             _goFlexCommand ?? (_goFlexCommand = new DelegateCommand(ExecuteGoFlexCommand, CanExecuteGoFlexCommand));
+
+        public DelegateCommand GoVSGCommand =>
+            _goVSGCommand ?? (_goVSGCommand = new DelegateCommand(ExecuteGoVSGCommand, CanExecuteGoVSGCommand));
+
+        private bool CanExecuteGoVSGCommand()
+        {
+            return true;
+        }
+
+        private void ExecuteGoVSGCommand()
+        {
+            NavigationService.NavigateAsync("VisualStatePage");
+        }
 
         private bool CanExecuteGoFlexCommand()
         {

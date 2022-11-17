@@ -80,6 +80,7 @@
         <Button Command="{Binding GoAlbumsCommand}" Text="Album Page" />
         <Button Command="{Binding GoGridsCommand}" Text="Grids Page" />
         <Button Command="{Binding GoFlexCommand}" Text="Flex Layout" />
+        <Button Command="{Binding GoVSGCommand}" Text="Visual State" />
     </StackLayout>
 
 </ContentPage>
